@@ -34,7 +34,10 @@ class PetsController < ApplicationController
   end
 
   patch '/pets/:id' do
-    fail
+    @pet = Pet.find(params[:id])
+    if !params[:owner][:name]
+      
+    end
     redirect to "pets/#{@pet.id}"
   end
 end
